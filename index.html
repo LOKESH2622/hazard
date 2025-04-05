@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Web3 NFT Automation App for Monad Testnet">
+    <meta name="keywords" content="Web3, NFT, Automation, Monad Testnet, Ethereum">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 NFT Automation App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web3 NFT Automation App</h1>
+            <div class="wallet-info">
+                <button id="connectWallet">Connect Wallet</button>
+                <div id="walletAddress">Not connected</div>
+                <div id="networkInfo">-</div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="card" id="nftSection">
+                <h2>NFT Minting</h2>
+                <div class="form-group">
+                    <label for="nftName">NFT Name:</label>
+                    <input type="text" id="nftName" placeholder="My Awesome NFT">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nftDescription">Description of the player deatils:</label>
+                    <textarea id="nftDescription" placeholder="This is a description of my NFT"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nftImage">Player Image URL:</label>
+                    <input type="text" id="nftImage" placeholder="https://example.com/image.png">
+                </div>
+                
+                <div class="button-group">
+                    <button id="mintNFT">Mint NFT</button>
+                    <button id="automatedMint">Setup Automated Minting</button>
+                </div>
+                
+                <div id="mintingStatus" class="status"></div>
+            </section>
+            
+            <section class="card" id="automationSection">
+                <h2>Transaction Automation</h2>
+                <div class="form-group">
+                    <label for="recipientAddress">Recipient Address:</label>
+                    <input type="text" id="recipientAddress" placeholder="0x...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transactionAmount">Amount (in ETH):</label>
+                    <input type="number" id="transactionAmount" step="0.001" value="0.01">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transactionInterval">Interval (in seconds):</label>
+                    <input type="number" id="transactionInterval" value="3600">
+                </div>
+                
+                <div class="button-group">
+                    <button id="scheduleTransaction">Schedule Transaction</button>
+                    <button id="executeTransaction">Execute Ready Transactions</button>
+                </div>
+                
+                <div id="transactionStatus" class="status"></div>
+            </section>
+            
+            <section class="card" id="activeAutomationsSection">
+                <h2>Active Automations</h2>
+                <div id="activeTransactionsList">
+                    <p>No active automations</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Web3 NFT Automation App - Built for Monad Testnet</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
